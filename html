@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI MONEY – Make Money With AI Content</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AI MONEY – A step-by-step system to create, publish, and sell content, images, and videos using free AI tools." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-dark: #020617;
+      --bg-section: #020b24;
+      --blue: #00b4ff;
+      --green: #00ff99;
+      --yellow: #ffd447;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-glow: rgba(0, 255, 153, 0.35);
+      --card-bg: rgba(15, 23, 42, 0.85);
+      --radius-lg: 18px;
+      --shadow-glow: 0 0 35px rgba(0, 255, 153, 0.25);
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at top left, #022c4b 0, #020617 40%, #000000 80%);
+      color: var(--text-main);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .wrapper {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* NAVBAR */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to right, rgba(2, 6, 23, 0.92), rgba(2, 6, 23, 0.8));
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 1.5rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .logo span.icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, var(--yellow), var(--green));
+      box-shadow: 0 0 18px rgba(0, 255, 153, 0.6);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--green), var(--yellow));
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 197, 94, 0.5);
+      color: var(--green);
+      font-size: 0.85rem;
+      background: rgba(15, 23, 42, 0.9);
+      box-shadow: 0 0 18px rgba(34, 197, 94, 0.25);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.1rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(56, 189, 248, 0.7);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .eyebrow span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 12px rgba(0, 255, 153, 0.6);
+    }
+
+    h1.hero-title {
+      font-size: clamp(2.15rem, 3.4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(120deg, var(--green), var(--yellow));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: 1.4rem;
+      max-width: 540px;
+    }
+
+    .hero-bullets {
+      display: grid;
+      gap: 0.35rem;
+      margin-bottom: 1.8rem;
+      font-size: 0.9rem;
+    }
+
+    .hero-bullets span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-bullets span i {
+      font-style: normal;
+      color: var(--green);
+      font-size: 1.1rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn-primary {
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      border: none;
+      background: radial-gradient(circle at 30% 0%, var(--yellow), var(--green));
+      color: #020617;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 0 30px rgba(0, 255, 153, 0.4);
+      cursor: pointer;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, filter 0.12s ease-out;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px) scale(1.01);
+      filter: brightness(1.05);
+      box-shadow: 0 0 38px rgba(0, 255, 153, 0.55);
+    }
+
+    .btn-ghost {
+      padding: 0.8rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text-main);
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: background 0.15s ease-out, border-color 0.15s ease-out;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      border-color: rgba(148, 163, 184, 0.9);
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      max-width: 420px;
+    }
+
+    .hero-book {
+      justify-self: center;
+    }
+
+    .book-card {
+      background: radial-gradient(circle at top, #0369a1, #020617 55%);
+      border-radius: 26px;
+      padding: 1.8rem 1.6rem 2rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 0 40px rgba(15, 23, 42, 0.95);
+      max-width: 360px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .book-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at 0 0, rgba(0, 255, 153, 0.18), transparent 55%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .book-pill {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .book-title {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .book-sub {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .price-main {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .price-old {
+      text-decoration: line-through;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .price-tag {
+      font-size: 0.75rem;
+      color: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .book-list {
+      font-size: 0.8rem;
+      color: var(--text-main);
+      margin-bottom: 1.2rem;
+      display: grid;
+      gap: 0.3rem;
+    }
+
+    .book-list span {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .book-list span i {
+      font-style: normal;
+      font-size: 0.95rem;
+      color: var(--blue);
+    }
+
+    .glow-line {
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.6), transparent);
+      margin: 0.7rem 0 0.9rem;
+    }
+
+    .trust-note {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    /* GENERIC SECTION */
+    section {
+      padding: 2.8rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.8rem;
+      color: var(--yellow);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-sub {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      max-width: 620px;
+      margin: 0.3rem auto 0;
+    }
+
+    /* WHY & HOW SECTION */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1.4rem 1.5rem 1.5rem;
+      box-shadow: 0 20px 35px rgba(15, 23, 42, 0.85);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.08), transparent 55%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-sub {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .card-list {
+      font-size: 0.86rem;
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .card-list li {
+      list-style: none;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.5rem;
+      align-items: start;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.08rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border: 1px solid rgba(52, 211, 153, 0.7);
+      color: var(--green);
+      margin-bottom: 0.45rem;
+    }
+
+    /* HOW WE BUILT IT SECTION */
+    .timeline {
+      border-left: 2px dashed rgba(148, 163, 184, 0.4);
+      padding-left: 1.3rem;
+      margin-top: 0.6rem;
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .step {
+      position: relative;
+    }
+
+    .step::before {
+      content: "";
+      position: absolute;
+      left: -1.48rem;
+      top: 0.2rem;
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, var(--yellow), var(--green));
+      box-shadow: 0 0 18px rgba(0, 255, 153, 0.6);
+    }
+
+    .step-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .step-body {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    /* WHAT YOU GET SECTION */
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .benefit-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 1.1rem 1.1rem 1.2rem;
+      font-size: 0.86rem;
+    }
+
+    .benefit-label {
+      font-size: 0.75rem;
+      color: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.2rem;
+    }
+
+    .benefit-title {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .benefit-body {
+      color: var(--text-muted);
+      font-size: 0.83rem;
+    }
+
+    /* FAQ / ACCORDION */
+    .faq-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .faq-item {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.75rem 0.9rem;
+      cursor: pointer;
+      transition: border-color 0.15s ease-out, background 0.15s ease-out;
+    }
+
+    .faq-item.open {
+      border-color: rgba(52, 211, 153, 0.8);
+      background: rgba(15, 23, 42, 0.95);
+      box-shadow: 0 0 22px rgba(52, 211, 153, 0.25);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq-q-text {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .faq-icon {
+      font-size: 1.1rem;
+      color: var(--green);
+      transition: transform 0.15s ease-out;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(90deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.18s ease-out;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    .faq-item.open .faq-answer {
+      padding-top: 0.25rem;
+    }
+
+    /* CTA STRIP */
+    .cta-strip {
+      background: linear-gradient(90deg, #0f172a, #022c4b);
+      border-radius: 22px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 1.4rem 1.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      box-shadow: 0 0 36px rgba(15, 23, 42, 0.95);
+    }
+
+    .cta-strip h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .cta-strip p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      padding: 1.8rem 0 2rem;
+      border-top: 1px solid rgba(30, 64, 175, 0.6);
+      background: radial-gradient(circle at top, rgba(37, 99, 235, 0.12), transparent 55%);
+      margin-top: 2rem;
+    }
+
+    footer .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      align-items: center;
+    }
+
+    /* REVEAL ANIMATION */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-book {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding-top: 2.4rem;
+      }
+      .book-card {
+        max-width: 100%;
+      }
+      .cta-strip {
+        padding: 1.1rem 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header>
+    <nav class="nav">
+      <div class="logo">
+        <span class="icon"></span>
+        <span>AI MONEY</span>
+      </div>
+      <div class="nav-links">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#why-buy">Why Buy</a>
+        <a href="#bonus">Bonus</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="#buy" class="nav-cta">Get the eBook</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="wrapper hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span class="dot"></span> Step-by-Step AI Content System
+          </div>
+          <h1 class="hero-title">
+            Turn <span class="highlight">AI Content</span> Into Real Money —
+            Even If You’re Starting From Zero.
+          </h1>
+          <p class="hero-sub">
+            <strong>AI MONEY</strong> shows you exactly how we wrote, designed,
+            and published this very book using free AI tools — and how you can
+            do the same to create and sell your own digital products.
+          </p>
+
+          <div class="hero-bullets">
+            <span><i>✔</i> Use AI to generate endless ideas, posts, images, and videos.</span>
+            <span><i>✔</i> Follow a simple workflow from concept to published product.</span>
+            <span><i>✔</i> Sell directly with PayPal, Kindle, or Etsy — no tech headaches.</span>
+          </div>
+
+          <div class="hero-cta-row">
+            <a href="#buy" class="btn-primary">Get Instant Access (PDF)</a>
+            <button class="btn-ghost" onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">
+              See How We Built This Book
+            </button>
+          </div>
+
+          <p class="hero-note">
+            Pay once, own it forever. Use this book as your blueprint, template, and proof that
+            AI-powered digital products really can be created in days — not months.
+          </p>
+        </div>
+
+        <div class="hero-book reveal">
+          <div class="book-card">
+            <div class="book-pill">Digital Playbook • PDF Download</div>
+            <div class="book-title">AI MONEY</div>
+            <div class="book-sub">
+              A Step-by-Step System for Content, Images, Videos, and Publishing.
+            </div>
+
+            <div class="price-row">
+              <span class="price-main">$19</span>
+              <span class="price-old">$49</span>
+              <span class="price-tag">Launch pricing</span>
+            </div>
+
+            <div class="book-list">
+              <span><i>◎</i> 18 focused chapters covering the full pipeline.</span>
+              <span><i>◎</i> No-fluff, beginner-friendly explanations.</span>
+              <span><i>◎</i> Bonus walkthrough: exactly how this book was made.</span>
+            </div>
+
+            <a id="buy" href="YOUR_PAYPAL_CHECKOUT_LINK_HERE" class="btn-primary" style="display:block;text-align:center;margin-bottom:0.7rem;">
+              Buy Now via PayPal
+            </a>
+
+            <div class="glow-line"></div>
+            <p class="trust-note">
+              Secure payment handled by PayPal. After checkout you’ll be taken to a
+              download page and receive the eBook by email.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY / HOW SECTION -->
+    <section id="why-buy">
+      <div class="wrapper">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Why this book</div>
+          <h2 class="section-title">Why Buy AI MONEY Instead of Another AI Guide?</h2>
+          <p class="section-sub">
+            Most AI books are either too technical or full of vague motivation.
+            AI MONEY is different: it’s a practical, tested workflow you can copy,
+            proven by the book you’re holding.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card reveal">
+            <div class="badge">Why you need it</div>
+            <h3 class="card-title">Stop Guessing What to Create</h3>
+            <p class="card-sub">
+              You don’t need more random AI tools — you need a system that tells you
+              what to do first, second, and next.
+            </p>
+            <ul class="card-list">
+              <li>
+                <span>✓</span>
+                <span>Turn one idea into posts, images, and short videos for multiple platforms.</span>
+              </li>
+              <li>
+                <span>✓</span>
+                <span>Move from “staring at a blank screen” to working from AI-generated drafts.</span>
+              </li>
+              <li>
+                <span>✓</span>
+                <span>Use simple checklists to stay consistent without burning out.</span>
+              </li>
+              <li>
+                <span>✓</span>
+                <span>Shift from just consuming AI content to actually producing and selling your own.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card reveal">
+            <div class="badge">What it does</div>
+            <h3 class="card-title">Turn Free AI Tools into a Money System</h3>
+            <p class="card-sub">
+              This is not about buying more software. It’s about stacking free tools into one clear path:
+              content → product → sale.
+            </p>
+            <ul class="card-list">
+              <li>
+                <span>★</span>
+                <span>ChatGPT and other AI tools for ideas, scripts, and written content.</span>
+              </li>
+              <li>
+                <span>★</span>
+                <span>AI image generators for covers, mockups, and scroll-stopping visuals.</span>
+              </li>
+              <li>
+                <span>★</span>
+                <span>Simple tools like Word and Adobe PDF to format a clean, professional book.</span>
+              </li>
+              <li>
+                <span>★</span>
+                <span>PayPal + a basic landing page so you can sell directly without relying only on Amazon or Etsy.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW WE BUILT IT -->
+    <section id="how-it-works">
+      <div class="wrapper">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Behind the scenes</div>
+          <h2 class="section-title">How We Built This Exact eBook (So You Can Copy It)</h2>
+          <p class="section-sub">
+            AI MONEY includes a bonus walkthrough showing how this book was created from scratch.
+            Here’s the high-level pipeline you’ll learn to use on your own projects.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card reveal">
+            <h3 class="card-title">Step-by-Step Creation Workflow</h3>
+            <p class="card-sub">
+              We didn’t just describe a system — we followed it to make this product.
+            </p>
+            <div class="timeline">
+              <div class="step">
+                <div class="step-title">1. Outline with ChatGPT</div>
+                <div class="step-body">
+                  We used ChatGPT to brainstorm chapter ideas, refine the structure,
+                  and generate a clean, logical Table of Contents.
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-title">2. Draft Every Chapter in AI</div>
+                <div class="step-body">
+                  Each chapter started as an AI draft, then was edited for clarity,
+                  simplicity, and beginner-friendly language.
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-title">3. Design Images with Gemini</div>
+                <div class="step-body">
+                  We wrote simple prompts to generate cinematic, realistic images that
+                  match each chapter’s message and brand colors.
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-title">4. Format in Word & Export with Adobe PDF</div>
+                <div class="step-body">
+                  All text and images were copy/pasted into Word for layout, then
+                  exported as a polished, ready-to-sell PDF using Adobe.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3 class="card-title">Publishing & Selling Workflow</h3>
+            <p class="card-sub">
+              The same content now works across multiple platforms and sales channels.
+            </p>
+            <div class="timeline">
+              <div class="step">
+                <div class="step-title">5. Publish on Kindle Direct Publishing</div>
+                <div class="step-body">
+                  Turn your PDF into a Kindle-ready manuscript and tap into Amazon’s marketplace.
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-title">6. List on Etsy for Digital Buyers</div>
+                <div class="step-body">
+                  Set up a digital listing with a cover image, description, and instant delivery.
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-title">7. Build a Simple Landing Page</div>
+                <div class="step-body">
+                  Use a basic page builder or GitHub Pages (like this one) to create a sales page
+                  you fully control.
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-title">8. Connect PayPal & Sell Directly</div>
+                <div class="step-body">
+                  Add a PayPal button so you can accept payments, deliver the PDF,
+                  and keep more of the revenue — no marketplace required.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT YOU GET -->
+    <section>
+      <div class="wrapper">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">What you get</div>
+          <h2 class="section-title">Everything Inside AI MONEY</h2>
+          <p class="section-sub">
+            This is more than a book. It’s a reusable blueprint for building your
+            own AI-powered income stream, one digital product at a time.
+          </p>
+        </div>
+
+        <div class="benefit-grid">
+          <div class="benefit-card reveal">
+            <div class="benefit-label">Foundation</div>
+            <div class="benefit-title">18 Clear, Focused Chapters</div>
+            <div class="benefit-body">
+              Learn how to use AI for ideas, writing, images, video, publishing, landing pages, links,
+              and email — all broken into simple, focused sections.
+            </div>
+          </div>
+          <div class="benefit-card reveal">
+            <div class="benefit-label">Execution</div>
+            <div class="benefit-title">Copy-and-Adapt Workflow</div>
+            <div class="benefit-body">
+              Follow the exact content system used to create this book. Swap in your niche
+              and offers, and you’re ready to publish your own products.
+            </div>
+          </div>
+          <div class="benefit-card reveal">
+            <div class="benefit-label">Monetization</div>
+            <div class="benefit-title">Multi-Platform Selling Strategy</div>
+            <div class="benefit-body">
+              Learn how to sell through Kindle, Etsy, and your own PayPal landing page so you’re not dependent on a single platform.
+            </div>
+          </div>
+          <div class="benefit-card reveal">
+            <div class="benefit-label">Bonus</div>
+            <div class="benefit-title">“How This Book Was Made” Breakdown</div>
+            <div class="benefit-body">
+              See behind the scenes — prompts, decisions, and steps that took AI MONEY from idea
+              to a real product your readers can buy.
+            </div>
+          </div>
+          <div class="benefit-card reveal">
+            <div class="benefit-label">Clarity</div>
+            <div class="benefit-title">Beginner-Friendly Language</div>
+            <div class="benefit-body">
+              No complex jargon or academic AI theory. Just plain-language instructions you can follow
+              even if this is your first AI project.
+            </div>
+          </div>
+          <div class="benefit-card reveal">
+            <div class="benefit-label">Momentum</div>
+            <div class="benefit-title">Repeatable for Future Products</div>
+            <div class="benefit-body">
+              Once you’ve done it once, you can reuse the system for future books, courses,
+              templates, and digital products.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="wrapper">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Questions</div>
+          <h2 class="section-title">FAQ – Before You Buy</h2>
+          <p class="section-sub">
+            Still on the fence? Here are answers to the most common questions about AI MONEY
+            and the system it teaches.
+          </p>
+        </div>
+
+        <div class="faq-wrapper">
+          <div class="faq-item reveal">
+            <div class="faq-question">
+              <div class="faq-q-text">Do I need paid AI tools to follow this book?</div>
+              <div class="faq-icon">›</div>
+            </div>
+            <div class="faq-answer">
+              No. The core workflow uses free tools like ChatGPT (free tier), Gemini for images,
+              Word for formatting, and simple landing page builders. If you upgrade later, the
+              system still applies.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <div class="faq-question">
+              <div class="faq-q-text">Is this only about selling books?</div>
+              <div class="faq-icon">›</div>
+            </div>
+            <div class="faq-answer">
+              Books are the example, but the system also works for checklists, templates, guides,
+              mini-courses, and other digital downloads. Once you learn the pipeline, you can
+              apply it to almost any info product.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <div class="faq-question">
+              <div class="faq-q-text">What if I’ve never published anything before?</div>
+              <div class="faq-icon">›</div>
+            </div>
+            <div class="faq-answer">
+              AI MONEY was written with beginners in mind. Each chapter focuses on one step at a
+              time and uses plain language. You don’t need a brand, audience, or past experience
+              to start.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <div class="faq-question">
+              <div class="faq-q-text">How do I actually get the file after paying?</div>
+              <div class="faq-icon">›</div>
+            </div>
+            <div class="faq-answer">
+              When you connect your PayPal button, you’ll send buyers to a simple thank-you page
+              or automatic delivery link where they can download the PDF. The book explains
+              this step so you can set it up yourself.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <section style="padding-top: 1.2rem;">
+      <div class="wrapper">
+        <div class="cta-strip reveal">
+          <div>
+            <h3>Ready to Turn AI Into a Real Product You Can Sell?</h3>
+            <p>
+              AI MONEY gives you the exact roadmap we used to create this book —
+              plus the confidence to repeat the process for your own offers.
+            </p>
+          </div>
+          <a href="YOUR_PAYPAL_CHECKOUT_LINK_HERE" class="btn-primary">
+            Get AI MONEY Now
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrapper footer-row">
+      <span>© <span id="year"></span> AI MONEY. All rights reserved.</span>
+      <span>Built with AI content, AI images, and a simple GitHub Pages site.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    revealEls.forEach((el) => observer.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      item.addEventListener("click", () => {
+        const open = item.classList.contains("open");
+        document.querySelectorAll(".faq-item").forEach((i) => {
+          i.classList.remove("open");
+          i.querySelector(".faq-answer").style.maxHeight = 0;
+        });
+        if (!open) {
+          item.classList.add("open");
+          const answer = item.querySelector(".faq-answer");
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
