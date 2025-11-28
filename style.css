@@ -645,4 +645,45 @@ footer .footer-row {
   .cta-strip {
     padding: 1.1rem 1.1rem;
   }
+
+/* BOOK COVER IMAGE IN HERO */
+.book-cover-img {
+  width: 100%;
+  border-radius: 18px;
+  margin-bottom: 1rem;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.6);
+}
+
+/* PREVIEW IMAGE GRID */
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
+  margin-top: 0.8rem;
+}
+
+.preview-item {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 0.9rem 0.9rem 1rem;
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.9);
+}
+
+.preview-item img {
+  border-radius: 12px;
+  margin-bottom: 0.6rem;
+}
+
+.preview-item figcaption {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* Stack images on mobile */
+@media (max-width: 900px) {
+  .preview-grid {
+    grid-template-columns: 1fr;
+  }
+}
 }
