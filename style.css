@@ -1,6 +1,4 @@
-/* =====================
-   ROOT VARIABLES
-===================== */
+/* ROOT VARIABLES */
 :root {
   --bg-dark: #020617;
   --bg-light: #020b24;
@@ -14,9 +12,7 @@
   --max-width: 1100px;
 }
 
-/* =====================
-   RESET
-===================== */
+/* RESET */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -46,9 +42,7 @@ a {
   padding: 0 1.5rem;
 }
 
-/* =====================
-   NAVBAR
-===================== */
+/* NAVBAR */
 header {
   position: sticky;
   top: 0;
@@ -117,9 +111,7 @@ header {
   font-size: 0.8rem;
 }
 
-/* =====================
-   HERO
-===================== */
+/* HERO */
 .hero {
   padding: 4rem 0 3rem;
 }
@@ -131,7 +123,6 @@ header {
   align-items: center;
 }
 
-/* eyebrow pill */
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -178,7 +169,9 @@ header {
   display: grid;
   gap: 0.4rem;
   font-size: 0.9rem;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.4rem;
+  max-width: 520px;
 }
 
 .hero-bullets span {
@@ -191,13 +184,12 @@ header {
   color: var(--green);
 }
 
-/* CTA row */
 .hero-cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   align-items: center;
-  margin-top: 0.8rem;
+  margin-top: 0.2rem;
   margin-bottom: 0.6rem;
 }
 
@@ -207,31 +199,39 @@ header {
   max-width: 440px;
 }
 
-/* buttons */
-.btn-primary {
-  padding: 0.85rem 1.6rem;
+/* BUTTONS */
+.btn-primary,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
   border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.85rem 1.6rem;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
   background: linear-gradient(120deg, var(--green), var(--yellow));
   color: #020617;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  font-size: 0.9rem;
 }
 
 .btn-ghost {
-  padding: 0.8rem 1.3rem;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.6);
   background: transparent;
+  border: 1px solid rgba(148, 163, 184, 0.6);
   color: var(--text-main);
-  font-size: 0.85rem;
-  cursor: pointer;
 }
 
-/* =====================
-   BOOK CARD
-===================== */
+.book-buy-btn {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+/* BOOK CARD */
 .hero-book {
   justify-self: center;
 }
@@ -328,9 +328,7 @@ header {
   color: var(--text-muted);
 }
 
-/* =====================
-   GENERIC SECTIONS
-===================== */
+/* GENERIC SECTION */
 section {
   padding: 3rem 0;
 }
@@ -361,9 +359,7 @@ section {
   margin: 0 auto;
 }
 
-/* =====================
-   TWO-COLUMN CARDS
-===================== */
+/* CARD GRIDS */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -416,9 +412,7 @@ section {
   gap: 0.45rem;
 }
 
-/* =====================
-   EVERYTHING INSIDE – BENEFIT GRID
-===================== */
+/* BENEFIT GRID */
 .benefit-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -452,9 +446,7 @@ section {
   color: var(--text-muted);
 }
 
-/* =====================
-   PREVIEW IMAGES
-===================== */
+/* PREVIEW IMAGES */
 .preview-grid {
   display: grid;
   gap: 1.5rem;
@@ -469,6 +461,9 @@ section {
 }
 
 .preview-item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-radius: 12px;
   margin-bottom: 0.6rem;
 }
@@ -478,9 +473,7 @@ section {
   color: var(--text-muted);
 }
 
-/* =====================
-   FAQ ACCORDION
-===================== */
+/* FAQ */
 .faq-wrapper {
   max-width: 800px;
   margin: 0 auto;
@@ -513,11 +506,9 @@ section {
   transition: transform 0.18s ease-out;
 }
 
-/* collapsed by default */
+/* hidden by default */
 .faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
+  display: none;
   font-size: 0.85rem;
   color: var(--text-muted);
   margin-top: 0.35rem;
@@ -525,16 +516,18 @@ section {
 
 /* open state */
 .faq-item.open .faq-answer {
-  max-height: 500px;
+  display: block;
 }
 
 .faq-item.open .faq-icon {
   transform: rotate(90deg);
 }
 
-/* =====================
-   CTA STRIP
-===================== */
+/* CTA STRIP */
+.cta-section {
+  padding-top: 1.5rem;
+}
+
 .cta-strip {
   background: linear-gradient(90deg, #020b24, #022c4b);
   border-radius: 20px;
@@ -546,9 +539,15 @@ section {
   gap: 1rem;
 }
 
-/* =====================
-   FOOTER
-===================== */
+.cta-strip > div {
+  flex: 1 1 auto;
+}
+
+.cta-strip .btn-primary {
+  flex: 0 0 auto;
+}
+
+/* FOOTER */
 footer {
   border-top: 1px solid rgba(148, 163, 184, 0.3);
   padding: 2rem 0;
@@ -564,18 +563,7 @@ footer {
   flex-wrap: wrap;
 }
 
-/* =====================
-   REVEAL CLASS – SAFE
-===================== */
-/* keep it simple: no hiding, just a hook if you ever want animations */
-.reveal {
-  opacity: 1;
-  transform: none;
-}
-
-/* =====================
-   MOBILE
-===================== */
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .hero-grid,
   .grid-2,
