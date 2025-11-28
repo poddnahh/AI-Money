@@ -9,7 +9,7 @@
   --yellow: #ffd447;
   --text-main: #e5e7eb;
   --text-muted: #9ca3af;
-  --card-bg: rgba(15, 23, 42, 0.95);
+  --card-bg: rgba(15, 23, 42, 0.96);
   --radius: 18px;
   --max-width: 1100px;
 }
@@ -53,8 +53,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(2, 6, 23, 0.95);
+  background: rgba(2, 6, 23, 0.96);
   border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+  backdrop-filter: blur(12px);
 }
 
 .nav {
@@ -79,7 +80,7 @@ header {
   height: 14px;
   border-radius: 50%;
   background: var(--green);
-  box-shadow: 0 0 12px rgba(0,255,153,.8);
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.8);
 }
 
 .nav-links {
@@ -89,18 +90,38 @@ header {
   color: var(--text-muted);
 }
 
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green), var(--yellow));
+  transition: width 0.15s ease-out;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
 .nav-cta {
-  padding: 0.4rem 0.9rem;
+  padding: 0.45rem 1rem;
   border-radius: 999px;
   border: 1px solid var(--green);
   color: var(--green);
+  font-size: 0.8rem;
 }
 
 /* =====================
    HERO
 ===================== */
 .hero {
-  padding: 4rem 0;
+  padding: 4rem 0 3rem;
 }
 
 .hero-grid {
@@ -108,6 +129,30 @@ header {
   grid-template-columns: 1.3fr 1fr;
   gap: 2.5rem;
   align-items: center;
+}
+
+/* eyebrow pill */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.12rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.7);
+  background: rgba(15, 23, 42, 0.9);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+}
+
+.eyebrow .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.8);
 }
 
 .hero-title {
@@ -125,22 +170,45 @@ header {
 .hero-sub {
   font-size: 0.95rem;
   color: var(--text-muted);
-  max-width: 500px;
-  margin-bottom: 1.5rem;
+  max-width: 520px;
+  margin-bottom: 1.3rem;
 }
 
 .hero-bullets {
   display: grid;
   gap: 0.4rem;
   font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.hero-bullets span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .hero-bullets i {
   color: var(--green);
 }
 
+/* CTA row */
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.hero-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  max-width: 440px;
+}
+
+/* buttons */
 .btn-primary {
-  margin-top: 1.4rem;
   padding: 0.85rem 1.6rem;
   border-radius: 999px;
   background: linear-gradient(120deg, var(--green), var(--yellow));
@@ -148,16 +216,33 @@ header {
   font-weight: 600;
   border: none;
   cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-ghost {
+  padding: 0.8rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: transparent;
+  color: var(--text-main);
+  font-size: 0.85rem;
+  cursor: pointer;
 }
 
 /* =====================
    BOOK CARD
 ===================== */
+.hero-book {
+  justify-self: center;
+}
+
 .book-card {
   background: var(--card-bg);
   border-radius: var(--radius);
   padding: 1.4rem;
   border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  max-width: 360px;
 }
 
 .book-cover-img {
@@ -165,13 +250,86 @@ header {
   margin-bottom: 1rem;
 }
 
+.book-pill {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
 .book-title {
   font-size: 1.3rem;
   font-weight: 700;
 }
 
+.book-sub {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 0.7rem;
+}
+
+.price-main {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--green);
+}
+
+.price-old {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.price-tag {
+  font-size: 0.75rem;
+  color: var(--yellow);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.book-list {
+  font-size: 0.8rem;
+  display: grid;
+  gap: 0.25rem;
+  margin-bottom: 0.9rem;
+}
+
+.book-list span {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.book-list i {
+  color: var(--blue);
+}
+
+.glow-line {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(148, 163, 184, 0.7),
+    transparent
+  );
+  margin: 0.5rem 0 0.7rem;
+}
+
+.trust-note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
 /* =====================
-   SECTIONS
+   GENERIC SECTIONS
 ===================== */
 section {
   padding: 3rem 0;
@@ -187,27 +345,111 @@ section {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--yellow);
+  margin-bottom: 0.35rem;
 }
 
 .section-title {
   font-size: 1.6rem;
   font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.section-sub {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 620px;
+  margin: 0 auto;
 }
 
 /* =====================
-   CARDS
+   TWO-COLUMN CARDS
 ===================== */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1.6rem;
 }
 
 .card {
   background: var(--card-bg);
   border-radius: var(--radius);
-  padding: 1.4rem;
-  border: 1px solid rgba(148,163,184,.35);
+  padding: 1.4rem 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(52, 211, 153, 0.8);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--green);
+  margin-bottom: 0.4rem;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.card-sub {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  margin-bottom: 0.7rem;
+}
+
+.card-list {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.86rem;
+}
+
+.card-list li {
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.45rem;
+}
+
+/* =====================
+   EVERYTHING INSIDE – BENEFIT GRID
+===================== */
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  margin-top: 1rem;
+}
+
+.benefit-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  font-size: 0.86rem;
+}
+
+.benefit-label {
+  font-size: 0.75rem;
+  color: var(--yellow);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.2rem;
+}
+
+.benefit-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.benefit-body {
+  font-size: 0.84rem;
+  color: var(--text-muted);
 }
 
 /* =====================
@@ -223,6 +465,7 @@ section {
   background: var(--card-bg);
   border-radius: var(--radius);
   padding: 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
 }
 
 .preview-item img {
@@ -230,33 +473,104 @@ section {
   margin-bottom: 0.6rem;
 }
 
+.preview-item figcaption {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
 /* =====================
-   FAQ
+   FAQ ACCORDION
 ===================== */
+.faq-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .faq-item {
   background: var(--card-bg);
-  border: 1px solid rgba(148,163,184,.35);
   border-radius: 14px;
-  padding: 0.9rem;
-  margin-bottom: 0.6rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.7rem;
   cursor: pointer;
 }
 
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.faq-q-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.faq-icon {
+  font-size: 1.1rem;
+  color: var(--green);
+  transition: transform 0.18s ease-out;
+}
+
+/* collapsed by default */
 .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
   font-size: 0.85rem;
   color: var(--text-muted);
-  margin-top: 0.4rem;
+  margin-top: 0.35rem;
+}
+
+/* open state */
+.faq-item.open .faq-answer {
+  max-height: 500px;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(90deg);
+}
+
+/* =====================
+   CTA STRIP
+===================== */
+.cta-strip {
+  background: linear-gradient(90deg, #020b24, #022c4b);
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 /* =====================
    FOOTER
 ===================== */
 footer {
-  border-top: 1px solid rgba(148,163,184,.3);
+  border-top: 1px solid rgba(148, 163, 184, 0.3);
   padding: 2rem 0;
   margin-top: 3rem;
   font-size: 0.75rem;
   color: var(--text-muted);
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* =====================
+   REVEAL CLASS – SAFE
+===================== */
+/* keep it simple: no hiding, just a hook if you ever want animations */
+.reveal {
+  opacity: 1;
+  transform: none;
 }
 
 /* =====================
@@ -265,11 +579,25 @@ footer {
 @media (max-width: 900px) {
   .hero-grid,
   .grid-2,
-  .preview-grid {
+  .preview-grid,
+  .benefit-grid {
     grid-template-columns: 1fr;
   }
 
   .nav-links {
     display: none;
+  }
+
+  .hero {
+    padding-top: 3rem;
+  }
+
+  .book-card {
+    max-width: 100%;
+  }
+
+  .cta-strip {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
