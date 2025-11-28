@@ -4,7 +4,7 @@ if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
-// Optional: reveal-on-scroll (safe-guarded)
+// Optional: reveal-on-scroll (content is visible by default via CSS)
 if ("IntersectionObserver" in window) {
   const revealEls = document.querySelectorAll(".reveal");
 
