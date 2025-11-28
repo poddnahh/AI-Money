@@ -15,7 +15,7 @@
     rel="stylesheet"
   />
 
-  <!-- ALL STYLES INLINE FOR NOW -->
+  <!-- ALL STYLES -->
   <style>
     :root {
       --bg-dark: #020617;
@@ -32,11 +32,7 @@
       --max-width: 1100px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: "Poppins", sans-serif;
@@ -46,15 +42,9 @@
       scroll-behavior: smooth;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    img { max-width: 100%; display: block; }
 
     .wrapper {
       max-width: var(--max-width);
@@ -122,9 +112,7 @@
       transition: width 0.2s ease-out;
     }
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
+    .nav-links a:hover::after { width: 100%; }
 
     .nav-cta {
       padding: 0.45rem 0.9rem;
@@ -137,9 +125,7 @@
     }
 
     /* HERO */
-    .hero {
-      padding: 3.5rem 0 2.5rem;
-    }
+    .hero { padding: 3.5rem 0 2.5rem; }
 
     .hero-grid {
       display: grid;
@@ -228,7 +214,7 @@
       font-size: 0.95rem;
       box-shadow: 0 0 30px rgba(0, 255, 153, 0.4);
       cursor: pointer;
-      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, filter 0.12s ease-out;
+      transition: transform 0.12s, box-shadow 0.12s, filter 0.12s;
     }
 
     .btn-primary:hover {
@@ -245,7 +231,7 @@
       color: var(--text-main);
       font-size: 0.88rem;
       cursor: pointer;
-      transition: background 0.15s ease-out, border-color 0.15s ease-out;
+      transition: background 0.15s, border-color 0.15s;
     }
 
     .btn-ghost:hover {
@@ -259,9 +245,7 @@
       max-width: 420px;
     }
 
-    .hero-book {
-      justify-self: center;
-    }
+    .hero-book { justify-self: center; }
 
     .book-card {
       background: radial-gradient(circle at top, #0369a1, #020617 55%);
@@ -362,9 +346,7 @@
     }
 
     /* GENERIC SECTION */
-    section {
-      padding: 2.8rem 0;
-    }
+    section { padding: 2.8rem 0; }
 
     .section-header {
       text-align: center;
@@ -465,9 +447,7 @@
       gap: 1.1rem;
     }
 
-    .step {
-      position: relative;
-    }
+    .step { position: relative; }
 
     .step::before {
       content: "";
@@ -539,7 +519,7 @@
       border: 1px solid rgba(148, 163, 184, 0.4);
       padding: 0.75rem 0.9rem;
       cursor: pointer;
-      transition: border-color 0.15s ease-out, background 0.15s ease-out;
+      transition: border-color 0.15s, background 0.15s;
     }
 
     .faq-item.open {
@@ -563,12 +543,10 @@
     .faq-icon {
       font-size: 1.1rem;
       color: var(--green);
-      transition: transform 0.15s ease-out;
+      transition: transform 0.15s;
     }
 
-    .faq-item.open .faq-icon {
-      transform: rotate(90deg);
-    }
+    .faq-item.open .faq-icon { transform: rotate(90deg); }
 
     .faq-answer {
       max-height: 0;
@@ -579,9 +557,7 @@
       margin-top: 0.4rem;
     }
 
-    .faq-item.open .faq-answer {
-      padding-top: 0.25rem;
-    }
+    .faq-item.open .faq-answer { padding-top: 0.25rem; }
 
     .cta-strip {
       background: linear-gradient(90deg, #0f172a, #022c4b);
@@ -635,33 +611,17 @@
     }
 
     @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-book {
-        order: -1;
-      }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-book { order: -1; }
     }
 
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      .benefit-grid {
-        grid-template-columns: 1fr;
-      }
-      .grid-2 {
-        grid-template-columns: 1fr;
-      }
-      .hero {
-        padding-top: 2.4rem;
-      }
-      .book-card {
-        max-width: 100%;
-      }
-      .cta-strip {
-        padding: 1.1rem 1.1rem;
-      }
+      .nav-links { display: none; }
+      .benefit-grid { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .hero { padding-top: 2.4rem; }
+      .book-card { max-width: 100%; }
+      .cta-strip { padding: 1.1rem 1.1rem; }
     }
   </style>
 </head>
@@ -683,12 +643,348 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- MAIN CONTENT -->
   <main>
-    <!-- (keep all your sections here exactly as you already have them) -->
-    <!-- I left them out here to save space, but your existing body content is fine. -->
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrapper hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">
+            <span class="dot"></span> Step-by-Step AI Content System
+          </div>
+          <h1 class="hero-title">
+            Turn <span class="highlight">AI Content</span> Into Real Money —
+            Even If You’re Starting From Zero.
+          </h1>
+          <p class="hero-sub">
+            <strong>AI MONEY</strong> shows you exactly how we wrote, designed,
+            and published this very book using free AI tools — and how you can
+            do the same to create and sell your own digital products.
+          </p>
+
+          <div class="hero-bullets">
+            <span><i>✔</i> Use AI to generate endless ideas, posts, images, and videos.</span>
+            <span><i>✔</i> Follow a simple workflow from concept to published product.</span>
+            <span><i>✔</i> Sell directly with PayPal, Kindle, or Etsy — no tech headaches.</span>
+          </div>
+
+          <div class="hero-cta-row">
+            <a href="#buy" class="btn-primary">Get Instant Access (PDF)</a>
+            <button class="btn-ghost" onclick="document.getElementById('how-it-works').scrollIntoView({behavior:'smooth'})">
+              See How We Built This Book
+            </button>
+          </div>
+
+          <p class="hero-note">
+            Pay once, own it forever. Use this book as your blueprint, template, and proof that
+            AI-powered digital products really can be created in days — not months.
+          </p>
+        </div>
+
+        <div class="hero-book reveal">
+          <div class="book-card">
+            <div class="book-pill">Digital Playbook • PDF Download</div>
+            <div class="book-title">AI MONEY</div>
+            <div class="book-sub">
+              A Step-by-Step System for Content, Images, Videos, and Publishing.
+            </div>
+
+            <div class="price-row">
+              <span class="price-main">$19</span>
+              <span class="price-old">$49</span>
+              <span class="price-tag">Launch pricing</span>
+            </div>
+
+            <div class="book-list">
+              <span><i>◎</i> 18 focused chapters covering the full pipeline.</span>
+              <span><i>◎</i> No-fluff, beginner-friendly explanations.</span>
+              <span><i>◎</i> Bonus walkthrough: exactly how this book was made.</span>
+            </div>
+
+            <a id="buy" href="YOUR_PAYPAL_CHECKOUT_LINK_HERE" class="btn-primary" style="display:block;text-align:center;margin-bottom:0.7rem;">
+              Buy Now via PayPal
+            </a>
+
+            <div class="glow-line"></div>
+            <p class="trust-note">
+              Secure payment handled by PayPal. After checkout you’ll be taken to a
+              download page and receive the eBook by email.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY / HOW SECTION -->
+    <section id="why-buy">
+      <div class="wrapper">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Why this book</div>
+          <h2 class="section-title">Why Buy AI MONEY Instead of Another AI Guide?</h2>
+          <p class="section-sub">
+            Most AI books are either too technical or full of vague motivation.
+            AI MONEY is different: it’s a practical, tested workflow you can copy,
+            proven by the book you’re holding.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card reveal">
+            <div class="badge">Why you need it</div>
+            <h3 class="card-title">Stop Guessing What to Create</h3>
+            <p class="card-sub">
+              You don’t need more random AI tools — you need a system that tells you
+              what to do first, second, and next.
+            </p>
+            <ul class="card-list">
+              <li><span>✓</span><span>Turn one idea into posts, images, and short videos for multiple platforms.</span></li>
+              <li><span>✓</span><span>Move from “staring at a blank screen” to working from AI-generated drafts.</span></li>
+              <li><span>✓</span><span>Use simple checklists to stay consistent without burning out.</span></li>
+              <li><span>✓</span><span>Shift from just consuming AI content to actually producing and selling your own.</span></li>
+            </ul>
+          </div>
+
+          <div class="card reveal">
+            <div class="badge">What it does</div>
+            <h3 class="card-title">Turn Free AI Tools into a Money System</h3>
+            <p class="card-sub">
+              This is not about buying more software. It’s about stacking free tools into one clear path:
+              content → product → sale.
+            </p>
+            <ul class="card-list">
+              <li><span>★</span><span>ChatGPT and other AI tools for ideas, scripts, and written content.</span></li>
+              <li><span>★</span><span>AI image generators for covers, mockups, and scroll-stopping visuals.</span></li>
+              <li><span>★</span><span>Word + Adobe PDF to format a clean, professional book.</span></li>
+              <li><span>★</span><span>PayPal + a basic landing page so you can sell directly, not just on marketplaces.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW WE BUILT IT -->
+    <section id="how-it-works">
+      <div class="wrapper">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Behind the scenes</div>
+          <h2 class="section-title">How We Built This Exact eBook (So You Can Copy It)</h2>
+          <p class="section-sub">
+            AI MONEY includes a bonus walkthrough showing how this book was created from scratch.
+            Here’s the high-level pipeline you’ll learn to use on your own projects.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card reveal">
+            <h3 class="card-title">Step-by-Step Creation Workflow</h3>
+            <p class="card-sub">We didn’t just describe a system — we followed it to make this product.</p>
+            <div class="timeline">
+              <div class="step">
+                <div class="step-title">1. Outline with ChatGPT</div>
+                <div class="step-body">
+                  Brainstorm chapter ideas, refine the structure, and generate the Table of Contents.
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-title">2. Draft Every Chapter in AI</div>
+                <div class="step-body">
+                  Start with AI drafts, then edit for clarity, simplicity, and beginner-friendly language.
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-title">3. Design Images with Gemini</div>
+                <div class="step-body">
+                  Use simple prompts to generate cinematic, realistic images that match each chapter.
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-title">4. Format in Word & Export PDF</div>
+                <div class="step-body">
+                  Copy/paste text and images into Word, then export as a polished PDF with Adobe.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3 class="card-title">Publishing & Selling Workflow</h3>
+            <p class="card-sub">The same content now works across multiple platforms and sales channels.</p>
+            <div class="timeline">
+              <div class="step">
+                <div class="step-title">5. Publish on Kindle Direct Publishing</div>
+                <div class="step-body">
+                  Turn your PDF into a Kindle-ready manuscript and tap into Amazon’s marketplace.
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-title">6. List on Etsy for Digital Buyers</div>
+                <div class="step-body">
+                  Set up a digital listing with a cover image, description, and instant delivery.
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-title">7. Build a Simple Landing Page</div>
+                <div class="step-body">
+                  Use GitHub Pages (like this) or a no-code builder to host your own sales page.
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-title">8. Connect PayPal & Sell Directly</div>
+                <div class="step-body">
+                  Add a PayPal button so you can accept payments and deliver the PDF automatically.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT YOU GET -->
+    <section>
+      <div class="wrapper">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">What you get</div>
+          <h2 class="section-title">Everything Inside AI MONEY</h2>
+          <p class="section-sub">
+            This is more than a book. It’s a reusable blueprint for building your
+            own AI-powered income stream, one digital product at a time.
+          </p>
+        </div>
+
+        <div class="benefit-grid">
+          <div class="benefit-card reveal">
+            <div class="benefit-label">Foundation</div>
+            <div class="benefit-title">18 Clear, Focused Chapters</div>
+            <div class="benefit-body">
+              Learn how to use AI for ideas, writing, images, video, publishing, landing pages, links,
+              and email — all broken into simple, focused sections.
+            </div>
+          </div>
+          <div class="benefit-card reveal">
+            <div class="benefit-label">Execution</div>
+            <div class="benefit-title">Copy-and-Adapt Workflow</div>
+            <div class="benefit-body">
+              Follow the exact content system used to create this book. Swap in your niche
+              and offers, and you’re ready to publish your own products.
+            </div>
+          </div>
+          <div class="benefit-card reveal">
+            <div class="benefit-label">Monetization</div>
+            <div class="benefit-title">Multi-Platform Selling Strategy</div>
+            <div class="benefit-body">
+              Learn how to sell through Kindle, Etsy, and your own PayPal landing page so you’re not dependent on a single platform.
+            </div>
+          </div>
+          <div class="benefit-card reveal">
+            <div class="benefit-label">Bonus</div>
+            <div class="benefit-title">“How This Book Was Made” Breakdown</div>
+            <div class="benefit-body">
+              See behind the scenes — prompts, decisions, and steps that took AI MONEY from idea
+              to a real product your readers can buy.
+            </div>
+          </div>
+          <div class="benefit-card reveal">
+            <div class="benefit-label">Clarity</div>
+            <div class="benefit-title">Beginner-Friendly Language</div>
+            <div class="benefit-body">
+              No complex jargon. Just plain instructions you can follow even if this is your first AI project.
+            </div>
+          </div>
+          <div class="benefit-card reveal">
+            <div class="benefit-label">Momentum</div>
+            <div class="benefit-title">Repeatable for Future Products</div>
+            <div class="benefit-body">
+              Once you’ve done it once, you can reuse the system for future books, courses,
+              templates, and digital products.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="wrapper">
+        <div class="section-header reveal">
+          <div class="section-eyebrow">Questions</div>
+          <h2 class="section-title">FAQ – Before You Buy</h2>
+          <p class="section-sub">
+            Still on the fence? Here are answers to the most common questions about AI MONEY
+            and the system it teaches.
+          </p>
+        </div>
+
+        <div class="faq-wrapper">
+          <div class="faq-item reveal">
+            <div class="faq-question">
+              <div class="faq-q-text">Do I need paid AI tools to follow this book?</div>
+              <div class="faq-icon">›</div>
+            </div>
+            <div class="faq-answer">
+              No. The core workflow uses free tools like ChatGPT (free tier), Gemini for images,
+              Word for formatting, and simple landing page builders. If you upgrade later, the
+              system still applies.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <div class="faq-question">
+              <div class="faq-q-text">Is this only about selling books?</div>
+              <div class="faq-icon">›</div>
+            </div>
+            <div class="faq-answer">
+              Books are the example, but the system also works for checklists, templates, guides,
+              mini-courses, and other digital downloads.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <div class="faq-question">
+              <div class="faq-q-text">What if I’ve never published anything before?</div>
+              <div class="faq-icon">›</div>
+            </div>
+            <div class="faq-answer">
+              AI MONEY was written with beginners in mind. Each chapter focuses on one step at a
+              time and uses plain language. You don’t need a brand, audience, or past experience
+              to start.
+            </div>
+          </div>
+
+          <div class="faq-item reveal">
+            <div class="faq-question">
+              <div class="faq-q-text">How do I actually get the file after paying?</div>
+              <div class="faq-icon">›</div>
+            </div>
+            <div class="faq-answer">
+              When you connect your PayPal button, you’ll send buyers to a simple thank-you page
+              or automatic delivery link where they can download the PDF.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <section style="padding-top: 1.2rem;">
+      <div class="wrapper">
+        <div class="cta-strip reveal">
+          <div>
+            <h3>Ready to Turn AI Into a Real Product You Can Sell?</h3>
+            <p>
+              AI MONEY gives you the exact roadmap we used to create this book —
+              plus the confidence to repeat the process for your own offers.
+            </p>
+          </div>
+          <a href="YOUR_PAYPAL_CHECKOUT_LINK_HERE" class="btn-primary">
+            Get AI MONEY Now
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="wrapper footer-row">
       <span>© <span id="year"></span> AI MONEY. All rights reserved.</span>
